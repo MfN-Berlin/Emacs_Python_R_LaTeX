@@ -10,6 +10,11 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (unless (package-installed-p `better-defaults) (package-install `better-defaults))
 (unless (package-installed-p `material-theme) (package-install `material-theme))
 
@@ -34,6 +39,17 @@
   (if (get-buffer "*scratch*")
       (kill-buffer "*scratch*")))
 (add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
+
+;; customize powerline
+;; (line above the command line at the bottom of the screen)
+(use-package powerline
+  :ensure t)
+(require 'powerline)
+(powerline-default-theme)
+
+;; highlight current line
+(global-hl-line-mode +1)
+(set-face-background hl-line-face "#1c1f26")
 
 ;; Load remaining initailization files
 (require `python-mode) ;; load ./python-mode.el
