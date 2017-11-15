@@ -6,18 +6,25 @@ GNU Emacs is a free, open source programming editor: https://www.gnu.org/softwar
 This is a configuration for using Emacs as Python3 and R editor. It includes:
 
 __UI__
-* Styling
-* Directory navigation tree
-* Tabs for open files
-* Standard copy+paste keybindings (aka Cua-Mode)
+* Styling (material-theme)
+* Directory navigation tree (neotree)
+* Tabs for open files (tabbar)
+* Standard copy+paste keybindings (cua-mode)
+* Support for makefiles (make-mode)
+* Built-in with Emacs: syntax highlighting for bash, xml, html, css, ini
 
 __Python 3__
-* Syntax checking
-* Code style (pep8)
-* Autocompletion
+* Python development environment (elpy)
+* Syntax checking (flycheck)
+* Code style (py-autopep8)
+* Autocompletion (jedi)
 
 __R__
-* R support (experimental)
+* Autocompletion (ess auto-complete)
+* Integrated R console (ess-mode)
+
+__Data__
+* Working with csv data: align columns, sort fields etc. (csv-mode)
 
 ![Screenshot Python](https://user-images.githubusercontent.com/679068/32175197-7c48b802-bd84-11e7-8828-650a30a0c368.png)
 _Editing a Python file, showing autocompletion._
@@ -37,9 +44,8 @@ apt-get install emacs python3 virtualenv ess r-recommended
 ```
 
 # Installation
-1. Get the [Emacs cheat sheet](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf). Remember, `C-x` generally stands for Ctrl-x and `M-x` for Alt-x. 
-2. Install required Python3 packages: `pip3 install -r requirements.txt`
-3. Add the following lines to your initialization file in  `~ /.emacs.d/init.el` (or create it if it doesn't exist):
+1. Install required Python3 packages: `pip3 install -r requirements.txt`
+2. Add the following lines to your initialization file in  `~ /.emacs.d/init.el` (or create it if it doesn't exist):
 ```
 (setenv "WORKSPACE" "<path_to_your_workspace_dir>")
 (add-to-list 'load-path "<path_to_where_you_cloned_emacs_python>")
@@ -47,9 +53,11 @@ apt-get install emacs python3 virtualenv ess r-recommended
 ```
 The directory $WORKSPACE will be shown in the tree when you start Emacs.
 
-4. Start Emacs. After the first (re)start, Emacs will download and install the necessary packages.
-5. Restart Emacs. In Emacs, do `M-x jedi:install-server`
-6. Restart Emacs
+3. Start Emacs. After the first (re)start, Emacs will download and install the necessary packages.
+4. Restart Emacs. In Emacs, do `M-x jedi:install-server`
+5. Restart Emacs
+
+Get the [list of common commands](https://github.com/AlvaroOrtizTroncoso/emacs_python_R/wiki). 
 
 # References
 Golubev, M. (2011) Emacs tabbar-mode visual tweaks. Online: https://gist.github.com/3demax/1264635 
