@@ -62,7 +62,7 @@ apt-get install texlive-full
 2. Add the following lines to your initialization file in  `~ /.emacs.d/init.el` (or create it if it doesn't exist):
 ```
 (setenv "WORKSPACE" "<path_to_your_workspace_dir>")
-(add-to-list 'load-path "<path_to_where_you_cloned_emacs_python>")
+(add-to-list 'load-path "<path_to_where_you_cloned_emacs_python_r_latex>")
 (load "init.el")
 ```
 The directory $WORKSPACE will be shown in the tree when you start Emacs.
@@ -71,7 +71,10 @@ The directory $WORKSPACE will be shown in the tree when you start Emacs.
 4. Restart Emacs. In Emacs, do `M-x jedi:install-server`
 5. Restart Emacs
 
-Take a look at the [list of common commands](https://github.com/AlvaroOrtizTroncoso/Emacs_Python_R_LaTeX/wiki). 
+Take a look at a [list of common commands](https://github.com/alvarosaurus/Emacs_Python_R_LaTeX/wiki). 
+
+# Known issues
+Please add your issues to the [list of known issues](https://github.com/alvarosaurus/Emacs_Python_R_LaTeX/issues).
 
 # References
 Golubev, M. (2011) Emacs tabbar-mode visual tweaks. Online: https://gist.github.com/3demax/1264635 
